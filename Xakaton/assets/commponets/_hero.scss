@@ -1,0 +1,36 @@
+.hero{
+    justify-content: center;
+    padding-top: 80px;
+    &__content{
+        height: 650px;
+        align-items: center;
+   
+    }
+    &__helloWord{
+        display: flex;
+        background: #1F7528;
+        width: 400px;
+        height: 150px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        
+    }
+        &__helloWord__h1{
+            font-size: 40px;
+            font-family: "Open Sans";
+            font-weight: 200;
+            
+        }
+    &__title{
+        padding-top: 50px;
+        padding-left: 50px;
+        font-size: 6mm;
+    }
+    &__text{
+        font-family: "Open Sans";
+        font-weight: 900;
+    }
+}
+
+

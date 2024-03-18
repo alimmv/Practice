@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Минималистичный Чат</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #212121;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #chat-container {
+      width: 1300px;
+      height: 700px;
+      background-color: #0E0E0E;
+      border-radius: 30px;
+      box-shadow: 0 0 20px rgba(28, 28, 28, 0.5);
+      overflow: hidden;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1cm;
+    }
+
+    #chat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+      border-radius: 30px 30px 0 0;
+    }
+
+    #chat-options {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+
+    .chat-button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00c403;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    #chat-messages {
+      overflow-y: scroll;
+      max-height: 650px;
+      padding: 10px;
+      flex: 1;
+    }
+
+    .received-message {
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    .sent-message {
+      text-align: right;
+      margin: 10px 0;
+      color: #00c403;
+    }
+
+    #input-container {
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    #message-input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0E0E0E;
+      color: #fff;
+    }
+
+    #send-button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00c403;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="chat-header">
+      <span>Чат</span>
+      <div id="chat-options">
+        <button class="chat-button">Анонимный чат</button>
+        <button class="chat-button">Открытый чат</button>
+      </div>
+    </div>
+    <div id="chat-messages">
+      <!-- Chat messages will appear here -->
+      <div class="received-message">Привет!</div>
+      <div class="received-message">Как дела?</div>
+      <div class="sent-message">Привет! У меня все отлично.</div>
+      <div class="sent-message">Как у тебя?</div>
+    </div>
+    <div id="input-container">
+      <input type="text" id="message-input" placeholder="Введите ваше сообщение...">
+      <button id="send-button">Отправить</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const messageInput = document.getElementById('message-input');
+      const sendButton = document.getElementById('send-button');
+      const chatMessages = document.getElementById('chat-messages');
+
+      function sendMessage() {
+        const messageText = messageInput.value.trim();
+        if (messageText !== '') {
+          const messageElement = document.createElement('div');
+          messageElement.className = 'sent-message';
+          messageElement.textContent = messageText;
+          chatMessages.appendChild(messageElement);
+          messageInput.value = ''; // Clear the input field
+          chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom of the messages
+        }
+      }
+
+      sendButton.addEventListener('click', sendMessage);
+
+      messageInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

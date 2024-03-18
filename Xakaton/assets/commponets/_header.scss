@@ -1,0 +1,99 @@
+
+.header {
+    // max-width: 1200px;
+    // margin: auto;
+    height: 125px;
+    border-bottom: 1px solid #ffffff;
+    
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__center{
+        display: flex;
+        width: 500px;
+        justify-content: space-between;
+    }
+
+    &__content {
+        display: flex;
+        padding: 20px 10px;
+    }
+
+    &__input {
+        margin-left: 15px;
+        background: #1C1C1C;
+        border: none;
+        outline: none;
+        padding: 12px 50px 12px 0px;
+        color: #ffffff;
+
+    }
+
+    &__search form {
+        display: flex;
+        align-items: center;
+        border: 2px solid #ffffff;
+        border-radius: 15px;
+        padding: 0px 15px;
+        box-shadow: 0px 1px 20px 7px #129637(111255, 1255, 1255, 10.1);
+        /* смещение по горизонтали, смещение по вертикали, размытие, цвет */
+
+        svg {
+            cursor: pointer;
+        }
+    }
+
+    &__chat {
+        margin-right: 30px;
+        font-size: 18px;
+        height: 45px;
+        padding: 10px 30px;
+        border: 0px solid #0f9134;
+        border-radius: 15px;
+        transition: .5s;
+        // box-shadow: 0px 1px 20px 7px #129637(111255, 1255, 1255, 10.1);
+        cursor: pointer;
+        color: #ffffff ;
+        text-decoration: none;
+    }
+
+    &__chat:hover {
+
+        background: #0f9134;
+        border: #0f9134;
+    }
+
+    &__autho__text:hover {
+        background: #0f9134;
+        box-shadow: 0px 1px 20px 7px #129637(111255, 1255, 1255, 10.1);
+        /* смещение по горизонтали, смещение по вертикали, размытие, цвет */
+        color: #ffffff;
+        border: none
+    }
+
+    &__autho__text {
+        background: #1c1c1c;
+        border-radius: 15px;
+        // border: #ffffff 1px;
+        border: 2px solid #ffffff;
+        width: 120px;
+        height: 46px;
+        color: #ffffff;
+        transition: 1s;
+        cursor: pointer;
+        text-decoration: none;
+
+    }
+
+    &__autho {
+        display: flex;
+        justify-content: space-evenly;
+        width: 310px;
+        text-decoration: none;
+
+    }
+}
+

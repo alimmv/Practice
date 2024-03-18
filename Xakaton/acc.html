@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        input:valid {
+            border-color: #4caf50;
+            background-color: #115116;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button.reset {
+            background-color: #f44336;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm">
+        
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+  
+
+       
+
+        <label for="group">Group:</label>
+        <input type="text" id="group" name="group" required>
+<a href="/index.html">
+        <button type="button" onclick="submitForm()">Done</button></a>
+        <button type="reset" class="reset">Reset</button>
+
+       
+    </form>
+
+    <script>
+        function submitForm() {
+            var nickname = document.getElementById('nickname').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var surname = document.getElementById('surname').value;
+            var group = document.getElementById('group').value;
+
+            if (nickname && isValidEmail(email) && isValidName(name) && isValidName(surname) && group) {
+                // Все поля заполнены и прошли проверку, переход на следующую страницу
+                window.location.href = 'huhuhu.html';
+            } else {
+                alert('Заполните все поля корректно!');
+            }
+        }
+
+        function isValidEmail(email) {
+            // Простейшая проверка для демонстрации, можете заменить на более сложную логику
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidName(name) {
+            // Проверка, что в имени или фамилии нет цифр
+            return /^[^\d]+$/.test(name);
+        }
+
+        function replaceSpaces() {
+            var nicknameInput = document.getElementById('nickname');
+            nicknameInput.value = nicknameInput.value.replace(/\s/g, '_');
+        }
+    </script>
+</body>
+</html>

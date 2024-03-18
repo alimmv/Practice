@@ -1,0 +1,25 @@
+body {
+    font-family: "Inter";
+    background: #1C1C1C;
+    color: #ffffff;
+    // border-bottom: 1px solid #ffffff;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,body,header{
+    margin: 0;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+* {box-sizing: border-box;}
+
+.text__dek{
+    text-decoration: none;
+    color: #ffffff;
+}
